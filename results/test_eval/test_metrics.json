@@ -1,0 +1,158 @@
+{
+  "mAP50": 0.7319,
+  "mAP50-95": 0.5232,
+  "per_class": {
+    "biodegradable": {
+      "AP50": 0.6925,
+      "AP50-95": 0.3975,
+      "precision": 0.8166,
+      "recall": 0.559
+    },
+    "cardboard": {
+      "AP50": 0.6675,
+      "AP50-95": 0.5185,
+      "precision": 0.7397,
+      "recall": 0.5604
+    },
+    "glass": {
+      "AP50": 0.8851,
+      "AP50-95": 0.6676,
+      "precision": 0.8667,
+      "recall": 0.8108
+    },
+    "metal": {
+      "AP50": 0.8386,
+      "AP50-95": 0.6227,
+      "precision": 0.8306,
+      "recall": 0.7639
+    },
+    "paper": {
+      "AP50": 0.682,
+      "AP50-95": 0.5336,
+      "precision": 0.776,
+      "recall": 0.5976
+    },
+    "plastic": {
+      "AP50": 0.6259,
+      "AP50-95": 0.3993,
+      "precision": 0.7606,
+      "recall": 0.508
+    }
+  },
+  "threshold": 0.25,
+  "breakdown": {
+    "class": {
+      "biodegradable": {
+        "precision": 0.7722,
+        "recall": 0.591,
+        "f1": 0.6695,
+        "objects": 6420,
+        "detections": 4913
+      },
+      "cardboard": {
+        "precision": 0.7017,
+        "recall": 0.5962,
+        "f1": 0.6447,
+        "objects": 639,
+        "detections": 543
+      },
+      "glass": {
+        "precision": 0.8242,
+        "recall": 0.8242,
+        "f1": 0.8242,
+        "objects": 1115,
+        "detections": 1115
+      },
+      "metal": {
+        "precision": 0.7562,
+        "recall": 0.7862,
+        "f1": 0.7709,
+        "objects": 809,
+        "detections": 841
+      },
+      "paper": {
+        "precision": 0.7153,
+        "recall": 0.5985,
+        "f1": 0.6517,
+        "objects": 655,
+        "detections": 548
+      },
+      "plastic": {
+        "precision": 0.7033,
+        "recall": 0.5419,
+        "f1": 0.6121,
+        "objects": 1063,
+        "detections": 819
+      }
+    },
+    "density": {
+      "1": {
+        "precision": 0.8079,
+        "recall": 0.9594,
+        "f1": 0.8772,
+        "objects": 763,
+        "detections": 906
+      },
+      "2-5": {
+        "precision": 0.7783,
+        "recall": 0.8139,
+        "f1": 0.7957,
+        "objects": 1268,
+        "detections": 1326
+      },
+      "6-20": {
+        "precision": 0.7476,
+        "recall": 0.6894,
+        "f1": 0.7174,
+        "objects": 2299,
+        "detections": 2120
+      },
+      ">20": {
+        "precision": 0.7565,
+        "recall": 0.5257,
+        "f1": 0.6203,
+        "objects": 6371,
+        "detections": 4427
+      }
+    },
+    "domain": {
+      "clean background": {
+        "precision": 0.7987,
+        "recall": 0.7549,
+        "f1": 0.7762,
+        "objects": 1824,
+        "detections": 1724
+      },
+      "scene": {
+        "precision": 0.7542,
+        "recall": 0.5994,
+        "f1": 0.668,
+        "objects": 8877,
+        "detections": 7055
+      }
+    },
+    "size": {
+      "small": {
+        "precision": 0.6717,
+        "recall": 0.2926,
+        "f1": 0.4076,
+        "objects": 2594,
+        "detections": 1130
+      },
+      "medium": {
+        "precision": 0.7494,
+        "recall": 0.6362,
+        "f1": 0.6882,
+        "objects": 4546,
+        "detections": 3859
+      },
+      "large": {
+        "precision": 0.804,
+        "recall": 0.8557,
+        "f1": 0.829,
+        "objects": 3561,
+        "detections": 3790
+      }
+    }
+  }
+}

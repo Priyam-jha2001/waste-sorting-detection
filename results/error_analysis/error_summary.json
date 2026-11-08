@@ -1,0 +1,107 @@
+{
+  "object_outcomes_pct": {
+    "class": {
+      "biodegradable": {
+        "correct": 59.1,
+        "misclassified": 0.2,
+        "poorly_localised": 5.7,
+        "missed": 35.0
+      },
+      "cardboard": {
+        "correct": 59.6,
+        "misclassified": 2.7,
+        "poorly_localised": 5.2,
+        "missed": 32.6
+      },
+      "glass": {
+        "correct": 82.4,
+        "misclassified": 2.2,
+        "poorly_localised": 3.6,
+        "missed": 11.7
+      },
+      "metal": {
+        "correct": 78.6,
+        "misclassified": 4.9,
+        "poorly_localised": 2.2,
+        "missed": 14.2
+      },
+      "paper": {
+        "correct": 59.8,
+        "misclassified": 6.1,
+        "poorly_localised": 3.8,
+        "missed": 30.2
+      },
+      "plastic": {
+        "correct": 54.2,
+        "misclassified": 2.8,
+        "poorly_localised": 3.9,
+        "missed": 39.1
+      }
+    },
+    "size": {
+      "small": {
+        "correct": 33.9,
+        "misclassified": 0.1,
+        "poorly_localised": 6.5,
+        "missed": 59.5
+      },
+      "medium": {
+        "correct": 63.1,
+        "misclassified": 1.3,
+        "poorly_localised": 4.6,
+        "missed": 31.0
+      },
+      "large": {
+        "correct": 82.9,
+        "misclassified": 2.8,
+        "poorly_localised": 4.0,
+        "missed": 10.2
+      }
+    },
+    "objects_per_image": {
+      "1": {
+        "correct": 95.9,
+        "misclassified": 3.3,
+        "poorly_localised": 0.4,
+        "missed": 0.4
+      },
+      "2-5": {
+        "correct": 81.4,
+        "misclassified": 3.0,
+        "poorly_localised": 2.4,
+        "missed": 13.2
+      },
+      "6-20": {
+        "correct": 68.9,
+        "misclassified": 3.0,
+        "poorly_localised": 4.4,
+        "missed": 23.7
+      },
+      ">20": {
+        "correct": 52.6,
+        "misclassified": 0.5,
+        "poorly_localised": 6.1,
+        "missed": 40.9
+      }
+    }
+  },
+  "prediction_outcomes": {
+    "tp": 6698,
+    "poor_box": 1125,
+    "background": 451,
+    "wrong_class": 221,
+    "duplicate": 284
+  },
+  "top_confusions": {
+    "paper -> biodegradable": 18,
+    "glass -> metal": 17,
+    "plastic -> metal": 17,
+    "metal -> plastic": 16,
+    "metal -> paper": 15,
+    "paper -> cardboard": 10,
+    "cardboard -> metal": 10,
+    "paper -> metal": 8,
+    "metal -> glass": 7,
+    "cardboard -> paper": 7
+  }
+}

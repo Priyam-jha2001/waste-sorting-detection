@@ -1,0 +1,61 @@
+{
+  "images": 10464,
+  "objects": 74073,
+  "per_class": {
+    "biodegradable": {
+      "objects": 45395,
+      "images": 2287,
+      "median_box_side_px": 42.4,
+      "small_pct": 36.4
+    },
+    "cardboard": {
+      "objects": 4696,
+      "images": 1502,
+      "median_box_side_px": 145.7,
+      "small_pct": 3.9
+    },
+    "glass": {
+      "objects": 7809,
+      "images": 2684,
+      "median_box_side_px": 126.4,
+      "small_pct": 10.7
+    },
+    "metal": {
+      "objects": 5841,
+      "images": 1898,
+      "median_box_side_px": 91.2,
+      "small_pct": 14.3
+    },
+    "paper": {
+      "objects": 4387,
+      "images": 1768,
+      "median_box_side_px": 183.8,
+      "small_pct": 5.1
+    },
+    "plastic": {
+      "objects": 5945,
+      "images": 1464,
+      "median_box_side_px": 79.0,
+      "small_pct": 15.7
+    }
+  },
+  "objects_per_image": {
+    "median": 2.0,
+    "max": 358,
+    "1": 5082,
+    "2-5": 3039,
+    "6-20": 1542,
+    ">20": 801
+  },
+  "object_size_pct": {
+    "small": 26.4,
+    "medium": 40.9,
+    "large": 32.7
+  },
+  "image_domain_pct": {
+    "scene": 67.1,
+    "clean background": 32.9
+  },
+  "images_with_invalid_boxes": 17,
+  "images_in_near_duplicate_groups": 33
+}

@@ -1,0 +1,11 @@
+path: C:/Study Material/Masters/Sem 2/Computer Vision/Portfolio 1/splits
+train: train.txt
+val: val.txt
+test: test.txt
+names:
+  0: biodegradable
+  1: cardboard
+  2: glass
+  3: metal
+  4: paper
+  5: plastic

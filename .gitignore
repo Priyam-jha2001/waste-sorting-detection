@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Dataset (not ours to publish, ~200 MB)
+GarbageDataset/
+GarbageDataset.zip
+*.cache
+
+# Model weights: keep only the final model
+*.pt
+!results/train/yolo26s_640_60ep/weights/best.pt
+
+# Large or temporary outputs
+results/predictions/
+results/compare/
+results/demo/
+runs/
+_to_delete/
+
+# Course material and editor / OS files
+*.pdf
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

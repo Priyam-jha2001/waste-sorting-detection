@@ -1,0 +1,131 @@
+{
+  "chosen_conf": 0.25,
+  "val_curve": {
+    "0.05": {
+      "precision": 0.3364,
+      "recall": 0.7888,
+      "f1": 0.4717,
+      "objects": 10684,
+      "detections": 25053
+    },
+    "0.1": {
+      "precision": 0.4979,
+      "recall": 0.7346,
+      "f1": 0.5935,
+      "objects": 10684,
+      "detections": 15764
+    },
+    "0.15": {
+      "precision": 0.6154,
+      "recall": 0.6946,
+      "f1": 0.6526,
+      "objects": 10684,
+      "detections": 12059
+    },
+    "0.2": {
+      "precision": 0.6997,
+      "recall": 0.6633,
+      "f1": 0.681,
+      "objects": 10684,
+      "detections": 10128
+    },
+    "0.25": {
+      "precision": 0.7646,
+      "recall": 0.6334,
+      "f1": 0.6928,
+      "objects": 10684,
+      "detections": 8850
+    },
+    "0.3": {
+      "precision": 0.808,
+      "recall": 0.6009,
+      "f1": 0.6892,
+      "objects": 10684,
+      "detections": 7946
+    },
+    "0.35": {
+      "precision": 0.8429,
+      "recall": 0.57,
+      "f1": 0.6801,
+      "objects": 10684,
+      "detections": 7225
+    },
+    "0.4": {
+      "precision": 0.8687,
+      "recall": 0.5379,
+      "f1": 0.6644,
+      "objects": 10684,
+      "detections": 6616
+    },
+    "0.45": {
+      "precision": 0.8913,
+      "recall": 0.5102,
+      "f1": 0.6489,
+      "objects": 10684,
+      "detections": 6116
+    },
+    "0.5": {
+      "precision": 0.9108,
+      "recall": 0.4809,
+      "f1": 0.6295,
+      "objects": 10684,
+      "detections": 5641
+    },
+    "0.55": {
+      "precision": 0.9302,
+      "recall": 0.4493,
+      "f1": 0.6059,
+      "objects": 10684,
+      "detections": 5160
+    },
+    "0.6": {
+      "precision": 0.9416,
+      "recall": 0.4161,
+      "f1": 0.5772,
+      "objects": 10684,
+      "detections": 4722
+    },
+    "0.65": {
+      "precision": 0.9513,
+      "recall": 0.3805,
+      "f1": 0.5436,
+      "objects": 10684,
+      "detections": 4273
+    },
+    "0.7": {
+      "precision": 0.9616,
+      "recall": 0.3419,
+      "f1": 0.5045,
+      "objects": 10684,
+      "detections": 3799
+    },
+    "0.75": {
+      "precision": 0.972,
+      "recall": 0.2985,
+      "f1": 0.4567,
+      "objects": 10684,
+      "detections": 3281
+    },
+    "0.8": {
+      "precision": 0.9784,
+      "recall": 0.2378,
+      "f1": 0.3827,
+      "objects": 10684,
+      "detections": 2597
+    },
+    "0.85": {
+      "precision": 0.9835,
+      "recall": 0.1727,
+      "f1": 0.2938,
+      "objects": 10684,
+      "detections": 1876
+    },
+    "0.9": {
+      "precision": 0.9864,
+      "recall": 0.095,
+      "f1": 0.1733,
+      "objects": 10684,
+      "detections": 1029
+    }
+  }
+}

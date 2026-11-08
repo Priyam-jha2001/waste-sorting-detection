@@ -1,0 +1,30 @@
+[
+  {
+    "run": "yolo26s_640_15ep",
+    "val_mAP50-95": 0.4357,
+    "val_mAP50": 0.661,
+    "per_class_AP50-95": {
+      "biodegradable": 0.3461,
+      "cardboard": 0.4155,
+      "glass": 0.5599,
+      "metal": 0.4716,
+      "paper": 0.4645,
+      "plastic": 0.3569
+    },
+    "inference_ms_per_img": 4.74
+  },
+  {
+    "run": "yolo11s_640_15ep",
+    "val_mAP50-95": 0.4034,
+    "val_mAP50": 0.6062,
+    "per_class_AP50-95": {
+      "biodegradable": 0.3416,
+      "cardboard": 0.3801,
+      "glass": 0.5221,
+      "metal": 0.428,
+      "paper": 0.4134,
+      "plastic": 0.3355
+    },
+    "inference_ms_per_img": 5.05
+  }
+]

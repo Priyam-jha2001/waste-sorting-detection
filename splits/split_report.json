@@ -1,0 +1,33 @@
+{
+  "train": {
+    "images": 7313,
+    "boxes": 51189,
+    "biodegradable": 31301,
+    "cardboard": 3319,
+    "glass": 5496,
+    "metal": 4138,
+    "paper": 2992,
+    "plastic": 3943
+  },
+  "val": {
+    "images": 1567,
+    "boxes": 10684,
+    "biodegradable": 6211,
+    "cardboard": 719,
+    "glass": 1198,
+    "metal": 894,
+    "paper": 725,
+    "plastic": 937
+  },
+  "test": {
+    "images": 1567,
+    "boxes": 10701,
+    "biodegradable": 6420,
+    "cardboard": 639,
+    "glass": 1115,
+    "metal": 809,
+    "paper": 655,
+    "plastic": 1063
+  },
+  "excluded_images_invalid_labels": 17
+}
