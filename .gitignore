@@ -26,3 +26,15 @@ _to_delete/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Our presentation, explanations and document exports (shared separately, not part of the code)
+CODE_GUIDE.md
+PROJECT_EXPLAINED.md
+*.pptx
+*.ppt
+*.docx
+*.doc
+~$*
+Presentation Script*
+Study Guide*
+CV Portfolio 1*
