@@ -25,6 +25,7 @@ Key findings:
 - **Object size and crowding decide what is found:** 86 % of large objects are detected but only 29 % of small ones; 96 % of objects in single-object images but 53 % in piles of more than 20.
 - **The main error is missing objects, not confusing classes:** 31 % of test objects are missed, 1.5 % get the wrong class.
 - **Some errors are label errors:** e.g. vegetables annotated as "paper"; 133 images have labels that contradict their file-name class.
+- **Training longer does not help:** a 100-epoch run stopped early at epoch 90 with validation mAP50-95 0.504 vs 0.500 for 60 epochs; the model has converged.
 - Inference: about 5 ms per image on an RTX 5060 Laptop GPU.
 
 ![Precision and recall by object size, objects per image and image domain](results/test_eval/breakdowns.png)
@@ -37,6 +38,7 @@ Key findings:
 | Split | `waste/split.py` | 70 / 15 / 15, stratified by class and crowding, near-duplicates kept together, fixed seed |
 | Model selection | `waste/training.py` | 15-epoch pilots of YOLO11s and YOLO26s compared on validation (0.403 vs 0.436 mAP50-95) |
 | Training | `waste/training.py` | YOLO26s, COCO-pretrained, 640 px, 60 epochs, augmentation chosen from the data analysis |
+| Training-length check | `waste/training.py` | Same setup with up to 100 epochs and early stopping (patience 15): stopped at epoch 90, best epoch 75, val mAP50-95 0.504 vs 0.500, so the 60-epoch model was kept |
 | Evaluation | `waste/evaluation.py` | Test mAP, per-class AP, confusion matrix, threshold chosen on validation, breakdowns |
 | Error analysis | `waste/errors.py` | Every object classified as correct / missed / wrong class / imprecise; example images |
 | Demo | `waste/demo.py` | Run the trained model on any image |
@@ -93,6 +95,7 @@ python main.py train --model yolo11s.pt --epochs 15     # pilot run
 python main.py train --model yolo26s.pt --epochs 15     # pilot run
 python main.py compare                                  # pilots compared on validation
 python main.py train                                    # final training (YOLO26s, 60 epochs)
+python main.py train --epochs 100                       # training-length check (early stopping)
 python main.py evaluate                                 # test-set metrics        -> results/test_eval/
 python main.py errors                                   # error analysis          -> results/error_analysis/
 python main.py predict --image path/to/photo.jpg        # boxes on any image      -> results/demo/
@@ -110,7 +113,11 @@ Green: ground truth found · orange: ground truth missed · blue: correct predic
 
 ## Team
 
-Priyam Jha, Dhrumil, Abin. Individual contributions are listed in the contribution statement submitted with the portfolio.
+| Member | Responsibility |
+| --- | --- |
+| Dhrumil Desai | Dataset analysis, split and pipeline design (A1 Task 1); visualisation and error analysis (A1 Task 3) |
+| Priyam Jha | Training and evaluation (A1 Task 2); retrieval, visualisation and evaluation of the embedding (A2 Task 2) |
+| Abin Skaria | Metric learning loss and sampling strategy (A2 Task 1); assigning unknown samples (A2 Task 2) |
 
 ## Acknowledgements
 
