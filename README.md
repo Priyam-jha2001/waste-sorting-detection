@@ -22,9 +22,9 @@ Computer Vision portfolio project, THWS (Technische Hochschule Würzburg-Schwein
 
 Key findings:
 
-- **Object size and crowding decide what is found:** 86 % of large objects are detected but only 29 % of small ones; 96 % of objects in single-object images but 53 % in piles of more than 20.
+- **Object size and crowding decide what is found:** 83 % of large objects are detected but only 34 % of small ones; 96 % of objects in single-object images but 53 % in piles of more than 20.
 - **The main error is missing objects, not confusing classes:** 31 % of test objects are missed, 1.5 % get the wrong class.
-- **Some errors are label errors:** e.g. vegetables annotated as "paper"; 133 images have labels that contradict their file-name class.
+- **Some errors are label errors:** e.g. vegetables annotated as "paper"; in 133 images the labels disagree with the file-name class (94 are mixed scenes, 39 are likely label errors).
 - **Training longer does not help:** a 100-epoch run stopped early at epoch 90 with validation mAP50-95 0.504 vs 0.500 for 60 epochs; the model has converged.
 - Inference: about 5 ms per image on an RTX 5060 Laptop GPU.
 

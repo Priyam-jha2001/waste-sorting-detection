@@ -134,22 +134,22 @@
     "size": {
       "small": {
         "precision": 0.6717,
-        "recall": 0.2926,
-        "f1": 0.4076,
+        "recall": 0.3389,
+        "f1": 0.4505,
         "objects": 2594,
         "detections": 1130
       },
       "medium": {
         "precision": 0.7494,
-        "recall": 0.6362,
-        "f1": 0.6882,
+        "recall": 0.6307,
+        "f1": 0.6849,
         "objects": 4546,
         "detections": 3859
       },
       "large": {
         "precision": 0.804,
-        "recall": 0.8557,
-        "f1": 0.829,
+        "recall": 0.829,
+        "f1": 0.8163,
         "objects": 3561,
         "detections": 3790
       }

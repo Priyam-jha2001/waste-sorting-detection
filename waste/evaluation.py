@@ -100,8 +100,9 @@ def match_split(cfg: Config, part: str, conf: float) -> list[Matched]:
     return out
 
 
-def precision_recall(tp: int, n_pred: int, n_gt: int) -> dict:
-    p, r = tp / max(n_pred, 1), tp / max(n_gt, 1)
+def precision_recall(tp: int, n_pred: int, n_gt: int, found: int | None = None) -> dict:
+    """Precision = correct detections / detections; recall = objects found / objects (found defaults to tp)."""
+    p, r = tp / max(n_pred, 1), (tp if found is None else found) / max(n_gt, 1)
     return {"precision": round(p, 4), "recall": round(r, 4), "f1": round(2 * p * r / max(p + r, 1e-9), 4),
             "objects": n_gt, "detections": n_pred}
 
@@ -132,11 +133,14 @@ def groups_of(m: Matched, xyxy: np.ndarray, cls: int) -> dict:
 
 def breakdown(matched: list[Matched]) -> dict:
     """Precision and recall per class, object size, objects per image and image domain."""
-    counts = defaultdict(lambda: [0, 0, 0])                                  # (kind, group) -> tp, preds, objects
+    # Precision groups each detection by its own box; recall groups each object by its true box.
+    # (Counting found objects by the predicted box size, as before, mixed the two groupings for object size.)
+    counts = defaultdict(lambda: [0, 0, 0, 0])                         # (kind, group) -> tp, preds, objects, found
     for m in matched:
-        for g in range(len(m.gt_outcome)):
+        for g, outcome in enumerate(m.gt_outcome):
             for kind, key in groups_of(m, m.gt_xyxy[g], m.sample.classes[g]).items():
                 counts[kind, key][2] += 1
+                counts[kind, key][3] += outcome == "correct"
         for p, outcome in enumerate(m.pr_outcome):
             for kind, key in groups_of(m, m.pr_xyxy[p], m.pr_cls[p]).items():
                 counts[kind, key][0] += outcome == "tp"
