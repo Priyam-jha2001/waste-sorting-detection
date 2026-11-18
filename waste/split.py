@@ -1,4 +1,5 @@
 """Task 1.2 - stratified, duplicate-aware train / validation / test split (fixed seed = same split every time)."""
+import os
 import random
 from collections import Counter, defaultdict
 
@@ -37,7 +38,7 @@ def make_split(cfg: Config) -> dict:
 
     cfg.split_dir.mkdir(parents=True, exist_ok=True)
     for part, items in split.items():
-        (cfg.split_dir / f"{part}.txt").write_text("\n".join(str(s.image) for s in items) + "\n", encoding="utf-8")
+        write_list(cfg, part, [s.image.name for s in items])
     write_yaml(cfg)
     report = {part: {"images": len(items), **Counter(CLASSES[c] for s in items for c in s.classes)}
               for part, items in split.items()}
@@ -46,16 +47,32 @@ def make_split(cfg: Config) -> dict:
 
 
 def write_yaml(cfg: Config) -> None:
-    """Dataset file that tells Ultralytics where the three image lists are."""
+    """Dataset file that tells Ultralytics where the three image lists are.
+    No `path:` key, so Ultralytics resolves the lists relative to this file's own folder."""
     names = "".join(f"  {i}: {n}\n" for i, n in enumerate(CLASSES))
-    cfg.data_yaml.write_text(f"path: {cfg.split_dir.as_posix()}\ntrain: train.txt\nval: val.txt\n"
-                             f"test: test.txt\nnames:\n{names}")
+    cfg.data_yaml.write_text(f"train: train.txt\nval: val.txt\ntest: test.txt\nnames:\n{names}")
+
+
+def images_prefix(cfg: Config) -> str:
+    """
+    Image folder as seen from splits/, e.g. './../GarbageDataset/GarbageDataset/images/'.
+    Ultralytics swaps a leading './' for the list file's own folder, so these lists work on any computer.
+    Falls back to the absolute folder if the dataset is on another drive (no relative path exists).
+    """
+    try:
+        return "./" + os.path.relpath(cfg.images_dir, cfg.split_dir).replace("\\", "/") + "/"
+    except ValueError:
+        return cfg.images_dir.as_posix() + "/"
+
+
+def write_list(cfg: Config, part: str, names: list[str]) -> None:
+    """splits/<part>.txt: one image per line, relative to the splits folder."""
+    prefix = images_prefix(cfg)
+    (cfg.split_dir / f"{part}.txt").write_text("".join(f"{prefix}{n}\n" for n in names), encoding="utf-8")
 
 
 def localize_paths(cfg: Config) -> None:
-    """Rewrite the image lists with this computer's paths; the split itself never changes."""
+    """Rewrite the image lists in the portable format (also converts old absolute-path lists); the split never changes."""
     for part in ("train", "val", "test"):
-        names = split_names(cfg, part)
-        (cfg.split_dir / f"{part}.txt").write_text(
-            "\n".join(str(cfg.images_dir / n) for n in names) + "\n", encoding="utf-8")
+        write_list(cfg, part, split_names(cfg, part))
     write_yaml(cfg)

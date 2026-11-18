@@ -1,4 +1,3 @@
-path: C:/Study Material/Masters/Sem 2/Computer Vision/Portfolio 1/splits
 train: train.txt
 val: val.txt
 test: test.txt
